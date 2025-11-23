@@ -1,16 +1,17 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { DictionaryEntry, Language, StoryResult } from "../types";
 import { SYSTEM_INSTRUCTION_DICTIONARY, SYSTEM_INSTRUCTION_STORY } from "../constants";
+// 替换掉文件中 import 语句之后的所有初始化代码
+// 确保 VITE_GEMINI_API_KEY 是全局变量或由 App.tsx 注入
+const apiKey = (window as any).VITE_GEMINI_API_KEY || 'dummy-key'; 
 
-// Initialize API
-const apiKey = process.env.API_KEY;
-// Safety check for development environments
-if (!apiKey) {
-  console.error("API Key is missing. Please ensure process.env.API_KEY is set.");
+// 这里不再使用 process.env，以适应浏览器环境
+if (apiKey === 'dummy-key') {
+    // ⚠️ 警告：如果 App.tsx 没有设置 VITE_GEMINI_API_KEY，这里仍会使用 dummy-key
+    console.warn("Using dummy key. Please ensure VITE_GEMINI_API_KEY is set in App component.");
 }
 
-const ai = new GoogleGenAI({ apiKey: apiKey || 'dummy-key' });
-
+const ai = new GoogleGenAI({ apiKey: apiKey });
 export const lookupTerm = async (
   term: string,
   sourceLang: Language,
