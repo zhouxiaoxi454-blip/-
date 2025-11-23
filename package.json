@@ -1,7 +1,8 @@
 {
-  "name": "copy-of-lingopop-ai-dictionary",
-  "private": true,
-  "version": "0.0.0",
+  "name": "your-project-name",
+  "version": "0.1.0",
+  "homepage": "https://zhouxiaoxi454-blip.github.io/-/", 
+  "scripts": {
   "type": "module",
   "scripts": {
     "dev": "vite",
