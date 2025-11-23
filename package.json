@@ -1,8 +1,7 @@
 {
   "name": "your-project-name",
   "version": "0.1.0",
-  "homepage": "https://zhouxiaoxi454-blip.github.io/-/", 
-  "scripts": {
+  "homepage": "https://zhouxiaoxi454-blip.github.io/-/",
   "type": "module",
   "scripts": {
     "dev": "vite",
